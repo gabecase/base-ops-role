@@ -1,0 +1,15 @@
+---
+  # UPDATE PACKAGES
+  - name: Update APT packages cache
+    apt: update_cache=yes cache_valid_time=3600
+    ignore_errors: True
+    async: 120
+    poll: 60
+
+  - name: Install required packages
+    apt: state=installed pkg={{ item }}
+    with_items: "{{ ubuntu_common_required_packages }}"
+
+  - name: Install optional packages
+    apt: state=installed pkg={{ item }}
+    with_items: "{{ ubuntu_common_optional_packages }}"
