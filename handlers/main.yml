@@ -1,0 +1,4 @@
+---
+# handlers file for jenkins-ansible-kit
+  - name: Restart ssh
+    service: name=ssh state=restarted

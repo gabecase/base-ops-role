@@ -1,0 +1,8 @@
+---
+  # FIREWALL
+  - name: Setup ufw
+    ufw: state=enabled policy=deny
+    become: true
+  - name: Allow ssh traffic
+    ufw: rule=allow port={{ common_ssh_port }} proto=tcp
+    become: true

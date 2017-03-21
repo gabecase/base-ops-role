@@ -1,0 +1,7 @@
+---
+ubuntu_common_required_packages:
+  - ufw
+  - fail2ban
+
+ubuntu_common_optional_packages:
+  - nano
