@@ -5,7 +5,7 @@
               line="Port "{{ common_ssh_port }}""
               state=present
   notify: Restart ssh
-- name: Disallow password authentication
+- name: Disable root logins
   lineinfile: dest=/etc/ssh/sshd_config
               regexp="^PermitRootLogin"
               line="PermitRootLogin no"
